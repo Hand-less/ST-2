@@ -1,4 +1,4 @@
-// Copyright 2024 Skotin Alexander
+// Copyright 2024 Salaev Vladislav
 #include <gtest/gtest.h>
 #include <cstdint>
 #include "circle.h"
@@ -17,24 +17,18 @@ class CircleTest : public ::testing::Test {
     }
 };
 
-// Тесты для класса Circle
-
-// Инициализация радиуса
 TEST_F(CircleTest, InitialRadius) {
     EXPECT_NEAR(c->getRadius(), 1.0, 1e-6);
 }
 
-// Инициализация длины окружности
 TEST_F(CircleTest, InitialFerence) {
     EXPECT_NEAR(c->getFerence(), 2 * PI * 1.0, 1e-6);
 }
 
-// Инициализация площади
 TEST_F(CircleTest, InitialArea) {
     EXPECT_NEAR(c->getArea(), PI * 1.0 * 1.0, 1e-6);
 }
 
-// Изменение радиуса
 TEST_F(CircleTest, SetRadius) {
     c->setRadius(2.0);
     EXPECT_NEAR(c->getRadius(), 2.0, 1e-6);
@@ -42,7 +36,6 @@ TEST_F(CircleTest, SetRadius) {
     EXPECT_NEAR(c->getArea(), PI * 2.0 * 2.0, 1e-6);
 }
 
-// Изменение длины окружности
 TEST_F(CircleTest, SetFerence) {
     c->setFerence(2 * PI * 2.0);
     EXPECT_NEAR(c->getRadius(), 2.0, 1e-6);
@@ -50,7 +43,6 @@ TEST_F(CircleTest, SetFerence) {
     EXPECT_NEAR(c->getArea(), PI * 2.0 * 2.0, 1e-6);
 }
 
-// Изменение площади
 TEST_F(CircleTest, SetArea) {
     c->setArea(PI * 2.0 * 2.0);
     EXPECT_NEAR(c->getRadius(), 2.0, 1e-6);
@@ -103,9 +95,6 @@ TEST_F(CircleTest, SetLargeArea) {
     EXPECT_NEAR(c->getArea(), PI * 1e6 * 1e6, 1e-6);
 }
 
-// Задача "Земля и верёвка"
-
-// Добавление 1 метра
 TEST(CircleIndependentTest, CalculateGapAfterAddingRope) {
     double initialRadius = 6378.1;
     double addedLength = 1.0;
@@ -113,7 +102,6 @@ TEST(CircleIndependentTest, CalculateGapAfterAddingRope) {
     EXPECT_NEAR(gap, 1.0 / (2 * PI), 1e-6);
 }
 
-// Добавление "нулевой" верёвки
 TEST(CircleIndependentTest, CalculateGapZeroAddedLength) {
     double initialRadius = 6378.1;
     double addedLength = 0.0;
@@ -121,7 +109,6 @@ TEST(CircleIndependentTest, CalculateGapZeroAddedLength) {
     EXPECT_NEAR(gap, 0.0, 1e-6);
 }
 
-// Задача "Бассейн"
 TEST(CircleIndependentTest, CalculateCostForPool) {
     double poolRadius = 3.0;
     double pathWidth = 1.0;
@@ -132,7 +119,6 @@ TEST(CircleIndependentTest, CalculateCostForPool) {
     EXPECT_NEAR(cost, 40212.38596594935, 1e-2);
 }
 
-// Стоимость ограды вокруг бассейна
 TEST(CircleIndependentTest, CalculateCostZeroWidth) {
     double poolRadius = 3.0;
     double pathWidth = 0.0;

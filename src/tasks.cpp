@@ -1,4 +1,4 @@
-// Copyright 2024 Skotin Alexander
+// Copyright 2024 Salaev Vladislav
 #include "tasks.h"
 #include "circle.h"
 
