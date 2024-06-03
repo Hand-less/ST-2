@@ -5,7 +5,7 @@
 
 
 class CircleTest : public ::testing::Test {
-protected:
+ protected:
     Circle* c;
 
     void SetUp() override {
@@ -127,7 +127,8 @@ TEST(CircleIndependentTest, CalculateCostForPool) {
     double pathWidth = 1.0;
     double concreteCost = 1000.0;
     double fenceCost = 2000.0;
-    double cost = calculateCostForPool(poolRadius, pathWidth, concreteCost, fenceCost);
+    double cost = calculateCostForPool(poolRadius,
+        pathWidth, concreteCost, fenceCost);
     EXPECT_NEAR(cost, 40212.38596594935, 1e-2);
 }
 
@@ -137,6 +138,7 @@ TEST(CircleIndependentTest, CalculateCostZeroWidth) {
     double pathWidth = 0.0;
     double concreteCost = 1000.0;
     double fenceCost = 2000.0;
-    double cost = calculateCostForPool(poolRadius, pathWidth, concreteCost, fenceCost);
-    EXPECT_NEAR(cost, 37699.11184307752, 1e-2);  
+    double cost = calculateCostForPool(poolRadius,
+        pathWidth, concreteCost, fenceCost);
+    EXPECT_NEAR(cost, 37699.11184307752, 1e-2);
 }

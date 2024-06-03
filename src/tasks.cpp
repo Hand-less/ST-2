@@ -10,7 +10,8 @@ double calculateGapAfterAddingRope(double initialRadius, double addedLength) {
     return earthCircle.getRadius() - initialRadius;
 }
 
-double calculateCostForPool(double poolRadius, double pathWidth, double concreteCost, double fenceCost) {
+double calculateCostForPool(double poolRadius,
+    double pathWidth, double concreteCost, double fenceCost) {
     Circle pool(poolRadius);
     double poolArea = pool.getArea();
 
