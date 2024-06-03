@@ -1,7 +1,11 @@
 // Copyright 2024 Salaev Vladislav
 #include <gtest/gtest.h>
 #include <cstdint>
+#include "tasks.h"
 #include "circle.h"
+
+
+#define PI 3.14159265358979323846
 
 
 class CircleTest : public ::testing::Test {
