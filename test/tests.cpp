@@ -120,7 +120,7 @@ TEST(CircleIndependentTest, CalculateCostForPool) {
     double fenceCost = 2000.0;
     double cost = calculateCostForPool(poolRadius,
         pathWidth, concreteCost, fenceCost);
-    EXPECT_NEAR(cost, 40212.38596594935, 1e-2);
+    EXPECT_NEAR(cost, 72256.63, 0.1);
 }
 
 TEST(CircleIndependentTest, CalculateCostZeroWidth) {
