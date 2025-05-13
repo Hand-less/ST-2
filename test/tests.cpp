@@ -99,6 +99,17 @@ TEST_F(CircleTest, SetLargeArea) {
     EXPECT_NEAR(c->getArea(), PI * 1e6 * 1e6, 1e-6);
 }
 
+TEST_F(CircleTest, SetVerySmallArea) {
+    double smallArea = 1e-12;
+    c->setArea(smallArea);
+
+    double expectedRadius = std::sqrt(smallArea / PI);
+    EXPECT_NEAR(c->getRadius(), expectedRadius, 1e-9);
+    EXPECT_NEAR(c->getArea(), smallArea, 1e-12);
+    EXPECT_NEAR(c->getFerence(), 2 * PI * expectedRadius, 1e-9);
+}
+
+
 TEST(CircleIndependentTest, CalculateGapAfterAddingRope) {
     double initialRadius = 6378.1;
     double addedLength = 1.0;
