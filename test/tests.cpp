@@ -1,6 +1,7 @@
 // Copyright 2025 Salaev Vladislav
 #include <gtest/gtest.h>
 #include <cstdint>
+#include <cmath>
 #include "tasks.h"
 #include "circle.h"
 
